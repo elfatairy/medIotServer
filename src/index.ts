@@ -1,7 +1,7 @@
 import express, { Request, Response } from 'express';
 import bodyParser from 'body-parser';
 const app = express();
-const port = parseInt(process.env.PORT || "3002");
+const port = parseInt(process.env.PORT || "8080");
 console.log(port);
 
 app.use(bodyParser.json());
