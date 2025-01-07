@@ -39,7 +39,7 @@ app.post('/upload-img', (req: Request, res: Response) => {
         }
 
         try {
-            const python = spawn('python', ['dist/script.py', uploadPath]);
+            const python = spawn(process.env.PYTHON_NAME ?? "python", ['dist/script.py', uploadPath]);
 
             // Handle the output from the Python script
             python.stdout.on('data', (data) => {

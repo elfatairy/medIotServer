@@ -40,11 +40,12 @@ app.post('/upload-img', (req, res) => {
     const uploadPath = (0, path_1.join)(__dirname, '../uploads', fileName);
     console.log(uploadPath);
     file.mv(uploadPath, (err) => __awaiter(void 0, void 0, void 0, function* () {
+        var _a;
         if (err) {
             throw Error(err);
         }
         try {
-            const python = (0, child_process_1.spawn)('python', ['dist/script.py', uploadPath]);
+            const python = (0, child_process_1.spawn)((_a = process.env.PYTHON_NAME) !== null && _a !== void 0 ? _a : "python", ['dist/script.py', uploadPath]);
             // Handle the output from the Python script
             python.stdout.on('data', (data) => {
                 console.log(`Output from Python: ${data}`);
