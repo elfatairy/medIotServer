@@ -44,7 +44,7 @@ app.post('/upload-img', (req: Request, res: Response) => {
             // Handle the output from the Python script
             python.stdout.on('data', (data) => {
                 console.log(`Output from Python: ${data}`);
-                fs.unlinkSync(uploadPath);
+                // fs.unlinkSync(uploadPath);
             });
 
             // Handle any errors from the Python script
