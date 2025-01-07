@@ -50,7 +50,7 @@ app.post('/upload-img', (req: Request, res: Response) => {
             // Handle any errors from the Python script
             python.stderr.on('data', (data) => {
                 console.error(`Error from Python: ${data}`);
-                fs.unlinkSync(uploadPath);
+                // fs.unlinkSync(uploadPath);
             });
 
         } catch (error) {
