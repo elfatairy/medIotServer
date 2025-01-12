@@ -75,7 +75,7 @@ def main():
             image_path = path
             class_names = ['Aphids', 'Apple scab', 'Black rot', 'Cedar apple rust', 'healthy', 'healthy', 'Cherry (including sour)Powdery mildew', 'Cherry (including sour)healthy', 'Corn (maize)Cercospora leaf spot Gray leaf spot', 'Corn (maize)Common rust ', 'Corn (maize)Northern Leaf Blight', 'Corn (maize)healthy', 'Black rot', 'Esca (Black Measles)', 'Leaf blight (Isariopsis Leaf Spot)', 'healthy', 'Haunglongbing (Citrus greening)', 'Bacterial spot', 'healthy', 'Pepper, Bacterial spot', 'Pepper, healthy', 'Early blight', 'Late blight', 'healthy', 'healthy', 'healthy', 'Powdery mildew', 'Leaf scorch', 'healthy', 'Bacterial spot', 'Early blight', 'Late blight', 'Leaf Mold', 'Septoria leaf spot', 'Spider mites Two-spotted spider mite', 'Target Spot', 'Tomato Yellow Leaf Curl Virus', 'Tomato mosaic virus', 'healthy']
             predicted_class = predict_image(image_path)
-            print(class_names[predicted_class])
+            print(class_names[predicted_class], end="")
         else:
             print(f"The path '{path}' exists but is neither a file nor a directory.")
     else:

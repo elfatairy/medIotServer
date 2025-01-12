@@ -1,0 +1,26 @@
+Collecting torch
+  Using cached torch-2.5.1-cp39-cp39-win_amd64.whl (203.0 MB)
+Collecting torchvision
+  Using cached torchvision-0.20.1-cp39-cp39-win_amd64.whl (1.6 MB)
+Collecting Pillow
+  Using cached pillow-11.1.0-cp39-cp39-win_amd64.whl (2.6 MB)
+Collecting filelock
+  Using cached filelock-3.16.1-py3-none-any.whl (16 kB)
+Collecting sympy==1.13.1
+  Using cached sympy-1.13.1-py3-none-any.whl (6.2 MB)
+Collecting networkx
+  Using cached networkx-3.2.1-py3-none-any.whl (1.6 MB)
+Collecting fsspec
+  Using cached fsspec-2024.12.0-py3-none-any.whl (183 kB)
+Collecting typing-extensions>=4.8.0
+  Using cached typing_extensions-4.12.2-py3-none-any.whl (37 kB)
+Collecting jinja2
+  Using cached jinja2-3.1.5-py3-none-any.whl (134 kB)
+Collecting mpmath<1.4,>=1.1.0
+  Using cached mpmath-1.3.0-py3-none-any.whl (536 kB)
+Collecting numpy
+  Using cached numpy-2.0.2-cp39-cp39-win_amd64.whl (15.9 MB)
+Collecting MarkupSafe>=2.0
+  Using cached MarkupSafe-3.0.2-cp39-cp39-win_amd64.whl (15 kB)
+Installing collected packages: mpmath, typing-extensions, sympy, Pillow, numpy, networkx, MarkupSafe, fsspec, filelock, jinja2, torch, torchvision
+Successfully installed MarkupSafe-3.0.2 Pillow-11.1.0 filelock-3.16.1 fsspec-2024.12.0 jinja2-3.1.5 mpmath-1.3.0 networkx-3.2.1 numpy-2.0.2 sympy-1.13.1 torch-2.5.1 torchvision-0.20.1 typing-extensions-4.12.2
