@@ -81,7 +81,7 @@ function listen() {
             }
             splittedData[hour] = ((parseFloat(splittedData[hour]) * tempCount + parseFloat(data.value)) / (++tempCount)).toString();
             (0, database_1.set)((0, database_1.ref)(FirebaseService.db, 'temperature/24h'), splittedData.join(','));
-            if (parseFloat(data.value) > 26) {
+            if (parseFloat(data.value) > 25 || parseFloat(data.value) < 30) {
                 if (!tempSent) {
                     expo.sendPushNotificationsAsync([
                         {
@@ -111,7 +111,7 @@ function listen() {
             }
             splittedData[hour] = ((parseFloat(splittedData[hour]) * humidCount + parseFloat(data.value)) / (++humidCount)).toString();
             (0, database_1.set)((0, database_1.ref)(FirebaseService.db, 'humidity/24h'), splittedData.join(','));
-            if (parseFloat(data.value) > 60) {
+            if (parseFloat(data.value) < 40 || parseFloat(data.value) > 30) {
                 if (!humdSent) {
                     expo.sendPushNotificationsAsync([
                         {
@@ -140,7 +140,7 @@ function listen() {
             }
             splittedData[hour] = ((parseFloat(splittedData[hour]) * vocCount + parseFloat(data.value)) / (++vocCount)).toString();
             (0, database_1.set)((0, database_1.ref)(FirebaseService.db, 'voc/24h'), splittedData.join(','));
-            if (parseFloat(data.value) > 630) {
+            if (parseFloat(data.value) > 0.6) {
                 if (!vocSent) {
                     expo.sendPushNotificationsAsync([
                         {
@@ -169,7 +169,7 @@ function listen() {
             }
             splittedData[hour] = ((parseFloat(splittedData[hour]) * soilCount + parseFloat(data.value)) / (++soilCount)).toString();
             (0, database_1.set)((0, database_1.ref)(FirebaseService.db, 'soilMoisture/24h'), splittedData.join(','));
-            if (parseFloat(data.value) > 25) {
+            if (parseFloat(data.value) > 20 || parseFloat(data.value) < 60) {
                 if (!soilSent) {
                     expo.sendPushNotificationsAsync([
                         {
@@ -220,7 +220,7 @@ app.post('/upload-img', (req, res) => {
             // Handle the output from the Python script
             python.stdout.on('data', (data) => {
                 console.log(`Output from Python: ${data}`);
-                FirebaseService.setDisease(data.toString());
+                // FirebaseService.setDisease(data.toString());
                 fs.unlinkSync(uploadPath);
             });
             // Handle any errors from the Python script

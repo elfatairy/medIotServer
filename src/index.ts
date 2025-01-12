@@ -43,7 +43,7 @@ async function listen () {
 
         set(ref(FirebaseService.db, 'temperature/24h'), splittedData.join(','));
 
-        if (parseFloat(data.value) > 26) {
+        if (parseFloat(data.value) > 25 || parseFloat(data.value) < 30) {
             if (!tempSent) {
                 expo.sendPushNotificationsAsync([
                     {
@@ -77,7 +77,7 @@ async function listen () {
 
         set(ref(FirebaseService.db, 'humidity/24h'), splittedData.join(','));
 
-        if (parseFloat(data.value) > 60) {
+        if (parseFloat(data.value) < 40 || parseFloat(data.value) > 30) {
             if (!humdSent) {
                 expo.sendPushNotificationsAsync([
                     {
@@ -110,7 +110,7 @@ async function listen () {
 
         set(ref(FirebaseService.db, 'voc/24h'), splittedData.join(','));
 
-        if (parseFloat(data.value) > 630) {
+        if (parseFloat(data.value) > 0.6) {
             if (!vocSent) {
                 expo.sendPushNotificationsAsync([
                     {
@@ -143,7 +143,7 @@ async function listen () {
 
         set(ref(FirebaseService.db, 'soilMoisture/24h'), splittedData.join(','));
 
-        if (parseFloat(data.value) > 25) {
+        if (parseFloat(data.value) > 20 || parseFloat(data.value) < 60) {
             if (!soilSent) {
                 expo.sendPushNotificationsAsync([
                     {
@@ -201,7 +201,7 @@ app.post('/upload-img', (req: Request, res: Response) => {
             // Handle the output from the Python script
             python.stdout.on('data', (data) => {
                 console.log(`Output from Python: ${data}`);
-                FirebaseService.setDisease(data.toString());
+                // FirebaseService.setDisease(data.toString());
                 fs.unlinkSync(uploadPath);
             });
 
