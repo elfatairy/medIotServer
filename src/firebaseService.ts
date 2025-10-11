@@ -1,18 +1,6 @@
 import { initializeApp } from "firebase/app";
-
+import { firebaseConfig } from "./firebase";
 import { getDatabase, ref, set, get, child } from "firebase/database";
-
-const firebaseConfig = {
-    apiKey: "",
-    authDomain: "esp32-16690.firebaseapp.com",
-    databaseURL:
-        "https://esp32-16690-default-rtdb.europe-west1.firebasedatabase.app",
-    projectId: "esp32-16690",
-    storageBucket: "esp32-16690.appspot.com",
-    messagingSenderId: "270762185717",
-    appId: "1:270762185717:web:7712bb5b437b935fab46bc",
-    measurementId: "G-P76M6SCGSH",
-};
 
 export const _ = initializeApp(firebaseConfig); 
 
