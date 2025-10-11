@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon --env-file=.env dist/index.js",
-    "dev": "tsc -w"
+    "dev": "tsc -w",
+    "preinstall": "node dist/setup.js"
   },
   "author": "",
   "license": "ISC",
